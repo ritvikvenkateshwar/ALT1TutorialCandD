@@ -8,8 +8,8 @@ function submitDataToServer() {
   // create an object to post to the server
   // IMPORTANT: ONE NAME - VALUE PAIR FOR EACH FIELD
   let dataObj = {
-    fname: document.getElementById("firstName").value,
-    sname: document.getElementById("surName").value,
+    fname: document.getElementById("name").value,
+    sname: document.getElementById("task").value,
     date: document.getElementById("date").value,
   };
   // JUST USE THESE LINES AS THEY ARE - NO NEED TO CHANGE
