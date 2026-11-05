@@ -44,16 +44,17 @@ app.post("/putData", function (request, response) {
 console.log("In app.post (/putData)");
 // build up insert statement. For example:
 // insert into person(first_name, surname) values ('Joe', 'Bloggs')
-let insStr = "insert into person(first_name, surname) values (";
-insStr = insStr + "\'"+request.body.fname+"\', ";
-insStr = insStr + "\'"+request.body.sname+"\') ";
+let insStr = "insert into Task(name, task, Complition_date) values (";
+insStr = insStr + "\'"+request.body.name+"\', ";
+insStr = insStr + "\'"+request.body.task+"\') ";
+insStr = insStr + "\'"+request.body.date+"\') ";
 db.run(insStr);
 });
 
 // Process the HTTP GET request for /getData
 app.get('/getData', function(request, response) {
 console.log("In app.get (/getData)");
-db.all('SELECT * from person', function(err, rows) {
+db.all('SELECT * from Task', function(err, rows) {
 response.send(JSON.stringify(rows));
 });
 });
