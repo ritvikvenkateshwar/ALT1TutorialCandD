@@ -11,7 +11,7 @@ app.use(express.static('public'));
 //from chatgpt on 2/10/2025 so that can see what's stored in SQLite d/b on render server.
 // Debug route: show all data in your table
 app.get("/show-data", (req, res) => {
-  db.all("SELECT * FROM person", [], (err, rows) => {
+  db.all("SELECT * FROM Task", [], (err, rows) => {
     if (err) {
       console.error("DB error:", err.message);
       res.status(500).send("Database error");
@@ -36,7 +36,7 @@ listener.address().port);
 
 // Create the database object
 const sqlite3 = require('sqlite3').verbose();
-let db = new sqlite3.Database('DEMODB'); // database name
+let db = new sqlite3.Database('DEMODB.db'); // database name
 
 
 // Process the HTTP POST request for /putData
