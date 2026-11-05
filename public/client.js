@@ -10,7 +10,7 @@ function submitDataToServer() {
   let dataObj = {
     name: document.getElementById("name").value,
     task: document.getElementById("task").value,
-    date: document.getElementById("date").value,
+    //date: document.getElementById("date").value,
   };
   // JUST USE THESE LINES AS THEY ARE - NO NEED TO CHANGE
   event.preventDefault(); // prevents 2 calls to this function!!
