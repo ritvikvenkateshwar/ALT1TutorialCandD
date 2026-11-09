@@ -23,11 +23,10 @@ p {
   max-width: 600px;
 }
 
-.parent{
-  display: flex;
-  justify-content: center; /* Horizontally center */
-  align-items: center;    /* Vertically center */
-  height: 100vh;          /* Set a parent height (e.g., full viewport) */
+.parent {
+  display: grid;
+  place-items: center; /* Centers both horizontally and vertically */
+  height: 100vh;
 }
 
 form {
