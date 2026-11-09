@@ -42,7 +42,7 @@ function displayData() {
   // iterate through every row and add it to our page
   users.forEach(function (row) {
     const newListItem = document.createElement("li");
-    newListItem.innerHTML = row["name"] + " " + row["task"] + " " + row["date"];
+    newListItem.innerHTML = row["name"] + " " + row["task"] //+ " " + row["date"];
     rowList.appendChild(newListItem);
   });
 }
