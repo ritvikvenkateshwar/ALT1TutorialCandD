@@ -34,15 +34,15 @@ function getDataFromServer() {
 
 function displayData() {
   console.log("displayData()");
-  // define variables that reference elements on our page
   const rowList = document.getElementById("users");
-  rowList.innerHTML = ""; // clear all the list items
-  // parse our response to convert to JSON
+  rowList.innerHTML = "";
   let users = JSON.parse(this.responseText);
-  // iterate through every row and add it to our page
   users.forEach(function (row) {
     const newListItem = document.createElement("li");
-    newListItem.innerHTML = "Name: " + row["name"] + "Task:  " + row["task"] + "Deadline:  " + row["Complition_date"];
+    newListItem.textContent =
+      "Name: " + row["name"] +
+      " | Task: " + row["task"] +
+      " | Deadline: " + row["Complition_date"];
     rowList.appendChild(newListItem);
   });
 }
