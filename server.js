@@ -37,20 +37,29 @@ listener.address().port);
 // Create the database object
 const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database('Alt1_DB.db'); // database name
-
-
 // Process the HTTP POST request for /putData
 app.post("/putData", function (request, response) {
-console.log("In app.post (/putData)");
-// build up insert statement. For example:
-// insert into person(first_name, surname) values ('Joe', 'Bloggs')
-let insStr = "insert into Task(name, task, Complition_date) values (";
-insStr = insStr + "\'"+request.body.name+"\', ";
-insStr = insStr + "\'"+request.body.task+"\') ";
-insStr = insStr + "\'"+request.body.date+"\') ";
-db.run(insStr);
+  console.log("In app.post (/putData)");
+  let insStr = `
+    INSERT INTO Task (name, task, Complition_date)
+    VALUES (?, ?, ?)
+  `;
+  db.run(
+    insStr,
+    [
+      request.body.name,
+      request.body.task,
+      request.body.date
+    ],
+    function(err) {
+      if (err) {
+        console.error("Database error:", err.message);
+        return response.status(500).send("Database error");
+      }
+      response.send("Data saved successfully");
+    }
+  );
 });
-
 // Process the HTTP GET request for /getData
 app.get('/getData', function(request, response) {
 console.log("In app.get (/getData)");
