@@ -10,7 +10,7 @@ function submitDataToServer() {
   let dataObj = {
     name: document.getElementById("name").value,
     task: document.getElementById("task").value,
-    //date: document.getElementById("date").value,
+    date: document.getElementById("date").value,
   };
   // JUST USE THESE LINES AS THEY ARE - NO NEED TO CHANGE
   event.preventDefault(); // prevents 2 calls to this function!!
@@ -42,7 +42,7 @@ function displayData() {
   // iterate through every row and add it to our page
   users.forEach(function (row) {
     const newListItem = document.createElement("li");
-    newListItem.innerHTML = row["name"] + " " + row["task"] //+ " " + row["date"];
+    newListItem.innerHTML = "Name: " + row["name"] + "Task:  " + row["task"] + "Deadline:  " + row["date"];
     rowList.appendChild(newListItem);
   });
 }
