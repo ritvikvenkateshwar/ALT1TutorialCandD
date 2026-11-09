@@ -59,15 +59,13 @@ button {
 }
 
 button:hover {
-  background-color: yellow;
+  background-color: hotpink;
 }
 
 button:active {
   box-shadow: none;
 }
-button:hoover{
-  color:hotpink
-}
+
 
 li {
   margin-bottom: 5px;
