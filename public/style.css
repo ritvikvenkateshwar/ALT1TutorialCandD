@@ -65,6 +65,9 @@ button:hover {
 button:active {
   box-shadow: none;
 }
+button:hoover{
+  color:hotpink
+}
 
 li {
   margin-bottom: 5px;
