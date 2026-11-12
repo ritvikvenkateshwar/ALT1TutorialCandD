@@ -64,7 +64,7 @@ input {
   font-size: 11px;
 }
 
-/* Remove unnecessary HTML line breaks */
+
 form br {
   display: none;
 }
