@@ -1,79 +1,131 @@
-/* styles */
-/* called by your view template */
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: yellow;
-  font-family: helvetica, arial, sans-serif;
-  margin: 2em;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: #111827;
+  text-align: center;
 }
 
+/* Main heading */
 h1 {
-  font-style: italic;
-  color: #373fff;
+  font-size: 96px;
+  font-weight: 400;
+  color: #111827;
+  margin: 10px 0 15px;
 }
 
-.bold {
-  font-weight: bold;
+/* Add a Task heading */
+h3 {
+  font-size: 46px;
+  font-weight: 400;
+  color: #111827;
+  margin: 15px 0 105px;
 }
 
-p {
-  max-width: 600px;
-}
-
-.parent {
-  display: grid;
-  place-items: center; /* Centers both horizontally and vertically */
-  height: 100vh;
-}
-
+/* Form layout */
 form {
-  margin-bottom: 25px;
-  padding: 15px;
-  background-color: cyan;
-  display: inline-block;
-  width: 100%;
-  max-width: 340px;
-  border-radius: 3px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 430px;
+  max-width: 95%;
+  text-align: left;
+  border-radius: 0;
 }
 
+/* Form labels */
+label {
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 110px;
+  font-size: 10px;
+  color: #111827;
+  padding-top: 4px;
+}
+
+/* Input fields */
 input {
   display: block;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  font-size: 16px;
+  width: 220px;
+  height: 16px;
+  margin-left: 110px;
+  margin-bottom: 4px;
+  padding: 2px 5px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 11px;
 }
 
+/* Remove unnecessary HTML line breaks */
+form br {
+  display: none;
+}
+
+/* Submit button */
 button {
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: lightgrey;
-  border: 1px solid grey;
-  box-shadow: 2px 2px teal;
+  display: block;
+  width: 119px;
+  height: 42px;
+  margin: 18px auto 0;
+  background-color: #3768f5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: hotpink;
+  background-color: #2855d9;
 }
 
 button:active {
-  box-shadow: none;
+  background-color: #2148bd;
 }
 
+/* Tasks section */
+p {
+  text-align: center;
+  font-size: 11px;
+  margin-top: 29px;
+}
 
 li {
   margin-bottom: 5px;
+  font-size: 14px;
 }
 
-footer {
-  margin-top: 50px;
-  padding-top: 25px;
-  border-top: 1px solid lightgrey;
+/* Responsive layout */
+@media (max-width: 500px) {
+  h1 {
+    font-size: 58px;
+  }
+
+  h3 {
+    font-size: 34px;
+    margin-bottom: 75px;
+  }
+
+  form {
+    width: 95%;
+  }
+
+  label {
+    width: 105px;
+  }
+
+  input {
+    width: calc(100% - 105px);
+    margin-left: 105px;
+  }
 }
